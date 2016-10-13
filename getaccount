@@ -4,9 +4,9 @@
 
 | Old                                 | New                                                    |
 |-------------------------------------|--------------------------------------------------------|
-|"_id" | "57863db23a3735a904000077" |
-| "phone" |"+9708526400" |
-| "userName" |"Benjamin礼好吗" |
+|"_id" | (not valid) |
+| "phone" | (not valid)|
+| "userName" | (valid) |
 | "online_url" | something |
 | "cityCode" |"朝阳" |
 | "gender" |"male" |
