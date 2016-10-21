@@ -102,7 +102,7 @@
 |RESPONSE BODY    | [{\_id:917417361066}]|
 
 
-## GET /sales/sms/passthrough
+## POST /sales/sms/passthrough
 |DESCRIPTION      | Send a custom reply to user via plivo                 |
 |-----------------|------------------------------------------------------------|
 |QUERY            | "?From=917417361066&To=917417361067&Text=What is your name?" |
