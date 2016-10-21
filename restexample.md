@@ -2,7 +2,7 @@
 # API
 
 ## POST /sales/sms
-|DESCRIPTION      | Send *Text*  *From* (user)  *To* (source)           |
+|DESCRIPTION      | Send *Text*  *From* (user)  *To* (source)                  |
 |-----------------|------------------------------------------------------------|
 |QUERY            | none|
 |BODY             | "From=917417361066&To=917417361067&Text=What is your name?"|
@@ -12,9 +12,20 @@
 
 
 ## GET /sales/sms
-|DESCRIPTION      | Get messages between *source* and  *user*            |
+|DESCRIPTION      | Get messages between *source* and  *user*                  |
 |-----------------|------------------------------------------------------------|
 |QUERY            | "?source=917417361067&user=917417361066"|
 |BODY             | none|
 |RESPONSE STATUS  | 200|
 |RESPONSE BODY    | [{source:917417361066,user:917417361066,text:'name',flow:'RX',createdAt:'2016-10-21T11:58:43.151Z'}]|
+
+
+## GET /sales/rejectcall
+|DESCRIPTION      | Rejects an incoming call                                   |
+|-----------------|------------------------------------------------------------|
+|QUERY            | none|
+|BODY             | none|
+|RESPONSE STATUS  | 200|
+|RESPONSE BODY    | \<Response>\<Hangup reason="rejected"/>\</Response> |
+
+
