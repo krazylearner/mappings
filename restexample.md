@@ -35,7 +35,7 @@
 |QUERY            | "?from=1477051856741&to=1477051956741"|
 |BODY             | none|
 |RESPONSE STATUS  | 200|
-|RESPONSE BODY    | [{\_id:917417361067 :4}] |
+|RESPONSE BODY    | [{\_id:917417361067,count :4}] |
 
 
 ## GET /sales/sms/tx
@@ -44,6 +44,15 @@
 |QUERY            | "?from=1477051856741&to=1477051956741"|
 |BODY             | none|
 |RESPONSE STATUS  | 200|
-|RESPONSE BODY    | [{\_id:917417361067 :3}] |
+|RESPONSE BODY    | [{\_id:917417361067,count :3}] |
+
+
+## GET /sales/sms/triggers
+|DESCRIPTION      | Get count of triggers fired grouped by trigger name between a date range (unix timestamp)    |
+|-----------------|------------------------------------------------------------|
+|QUERY            | "?from=1477051856741&to=1477051956741"|
+|BODY             | none|
+|RESPONSE STATUS  | 200|
+|RESPONSE BODY    | [{\_id:'AskBotEmail',count :1}] |
 
 
