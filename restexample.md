@@ -29,3 +29,21 @@
 |RESPONSE BODY    | \<Response>\<Hangup reason="rejected"/>\</Response> |
 
 
+## GET /sales/sms/rx
+|DESCRIPTION      | Get count of RX sms grouped by source number between a date range (unix timestamp)    |
+|-----------------|------------------------------------------------------------|
+|QUERY            | "?from=1477051856741&to=1477051956741"|
+|BODY             | none|
+|RESPONSE STATUS  | 200|
+|RESPONSE BODY    | [{\_id:917417361067 :4}] |
+
+
+## GET /sales/sms/tx
+|DESCRIPTION      | Get count of TX sms grouped by source number between a date range (unix timestamp)    |
+|-----------------|------------------------------------------------------------|
+|QUERY            | "?from=1477051856741&to=1477051956741"|
+|BODY             | none|
+|RESPONSE STATUS  | 200|
+|RESPONSE BODY    | [{\_id:917417361067 :3}] |
+
+
