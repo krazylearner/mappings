@@ -56,3 +56,13 @@
 |RESPONSE BODY    | [{\_id:'AskBotEmail',count :1}] |
 
 
+## GET /sales/sms/logs
+|DESCRIPTION      | Get logs between a date range (unix timestamp)    |
+|-----------------|------------------------------------------------------------|
+|QUERY            | "?from=1477051856741&to=1477051956741"|
+|BODY             | none|
+|RESPONSE STATUS  | 200|
+|RESPONSE BODY    | [{"source":"917417361067","user":"917417361066","flow":"RX","level":"info","message":"what is your name?","timestamp":"2016-10-21T11:36:56.191Z"}
+] |
+
+
