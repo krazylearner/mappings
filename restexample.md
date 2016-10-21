@@ -65,3 +65,12 @@
 |RESPONSE BODY    | [{"source":"917417361067","user":"917417361066","flow":"RX","level":"info","message":"what is your name?","timestamp":"2016-10-21T11:36:56.191Z"}] |
 
 
+## GET /sales/sms/search
+|DESCRIPTION      | Search logs for a query  |
+|-----------------|------------------------------------------------------------|
+|QUERY            | "?q=hello"|
+|BODY             | none|
+|RESPONSE STATUS  | 200|
+|RESPONSE BODY    | [{"source":"917417361067","user":"917417361066","flow":"RX","level":"info","message":"hello your name?","timestamp":"2016-10-21T11:36:56.191Z"}] |
+
+
