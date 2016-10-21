@@ -82,3 +82,21 @@
 |BODY             | none|
 |RESPONSE STATUS  | 200|
 |RESPONSE BODY    | [{source:917417361066,user:917417361066,text:'what is your name ?',flow:'RX',createdAt:'2016-10-21T11:58:43.151Z'}]|
+
+
+## GET /sales/sms/messages
+|DESCRIPTION      | Get all messages between two numbers                  |
+|-----------------|------------------------------------------------------------|
+|QUERY            | "?from=917417361067&to=917417361066"|
+|BODY             | none|
+|RESPONSE STATUS  | 200|
+|RESPONSE BODY    | [{source:917417361066,user:917417361066,text:'what is your name ?',flow:'RX',createdAt:'2016-10-21T11:58:43.151Z'}]|
+
+
+## GET /sales/sms/numbers
+|DESCRIPTION      | Get all numbers which have been messaged on                  |
+|-----------------|------------------------------------------------------------|
+|QUERY            | none |
+|BODY             | none |
+|RESPONSE STATUS  | 200|
+|RESPONSE BODY    | [{\_id:917417361066}]|
