@@ -37,6 +37,10 @@
 |RESPONSE STATUS  | 200|
 |RESPONSE BODY    | [{\_id:917417361067,count :4}] |
 
+```
+curl 'http://localhost:8080/sales/sms/rx?from=1475318536971&to=1477651336971'
+```
+
 
 ## GET /sales/sms/tx
 |DESCRIPTION      | Get count of TX sms grouped by source number between a date range (unix timestamp)    |
@@ -46,6 +50,10 @@
 |RESPONSE STATUS  | 200|
 |RESPONSE BODY    | [{\_id:917417361067,count :3}] |
 
+```
+curl 'http://localhost:8080/sales/sms/tx?from=1475318536973&to=1477651336973'
+```
+
 
 ## GET /sales/sms/triggers
 |DESCRIPTION      | Get count of triggers fired grouped by trigger name between a date range (unix timestamp)    |
@@ -54,6 +62,10 @@
 |BODY             | none|
 |RESPONSE STATUS  | 200|
 |RESPONSE BODY    | [{\_id:'AskBotEmail',count :1}] |
+
+```
+curl 'http://localhost:8080/sales/sms/triggers?from=1475318536975&to=1477651336975'
+```
 
 
 ## GET /sales/sms/logs
