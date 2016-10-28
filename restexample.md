@@ -25,8 +25,7 @@ curl 'localhost:8080/sales/sms -d "From=917417361066&To=917417361068&Text=what i
 curl 'http://localhost:8080/sales/sms?source=917417361068&user=917417361066'
 ```
 
-
-## GET /sales/rejectcall
+## POST /sales/rejectcall
 |DESCRIPTION      | Rejects an incoming call                                   |
 |-----------------|------------------------------------------------------------|
 |QUERY            | none|
@@ -34,6 +33,9 @@ curl 'http://localhost:8080/sales/sms?source=917417361068&user=917417361066'
 |RESPONSE STATUS  | 200|
 |RESPONSE BODY    | \<Response>\<Hangup reason="rejected"/>\</Response> |
 
+```
+curl -X POST 'http://localhost:8080/sales/rejectcall'
+```
 
 ## GET /sales/sms/rx
 |DESCRIPTION      | Get count of RX sms grouped by source number between a date range (unix timestamp)    |
@@ -46,7 +48,6 @@ curl 'http://localhost:8080/sales/sms?source=917417361068&user=917417361066'
 ```
 curl 'http://localhost:8080/sales/sms/rx?from=1475318536971&to=1477651336971'
 ```
-
 
 ## GET /sales/sms/tx
 |DESCRIPTION      | Get count of TX sms grouped by source number between a date range (unix timestamp)    |
@@ -82,6 +83,10 @@ curl 'http://localhost:8080/sales/sms/triggers?from=1475318536975&to=14776513369
 |RESPONSE STATUS  | 200|
 |RESPONSE BODY    | [{"source":"917417361067","user":"917417361066","flow":"RX","level":"info","message":"what is your name?","timestamp":"2016-10-21T11:36:56.191Z"}] |
 
+```
+curl 'http://localhost:8080/sales/sms/logs?from=1475087400000&to=1477679399999'
+```
+
 
 ## GET /sales/sms/search
 |DESCRIPTION      | Search logs for a query  |
@@ -91,6 +96,17 @@ curl 'http://localhost:8080/sales/sms/triggers?from=1475318536975&to=14776513369
 |RESPONSE STATUS  | 200|
 |RESPONSE BODY    | [{"source":"917417361067","user":"917417361066","flow":"RX","level":"info","message":"hello your name?","timestamp":"2016-10-21T11:36:56.191Z"}] |
 
+```
+curl 'http://localhost:8080/sales/sms/search?q=what'
+```
+
+## GET /sales/sms/messages
+|DESCRIPTION      | Get all messages between two numbers                  |
+|-----------------|------------------------------------------------------------|
+|QUERY            | "?from=917417361067&to=917417361066"|
+|BODY             | none|
+|RESPONSE STATUS  | 200|
+|RESPONSE BODY    | [{source:917417361066,user:917417361066,text:'what is your name ?',flow:'RX',createdAt:'2016-10-21T11:58:43.151Z'}]|
 
 
 ## GET /sales/sms/messages
@@ -101,15 +117,9 @@ curl 'http://localhost:8080/sales/sms/triggers?from=1475318536975&to=14776513369
 |RESPONSE STATUS  | 200|
 |RESPONSE BODY    | [{source:917417361066,user:917417361066,text:'what is your name ?',flow:'RX',createdAt:'2016-10-21T11:58:43.151Z'}]|
 
-
-## GET /sales/sms/messages
-|DESCRIPTION      | Get all messages between two numbers                  |
-|-----------------|------------------------------------------------------------|
-|QUERY            | "?from=917417361067&to=917417361066"|
-|BODY             | none|
-|RESPONSE STATUS  | 200|
-|RESPONSE BODY    | [{source:917417361066,user:917417361066,text:'what is your name ?',flow:'RX',createdAt:'2016-10-21T11:58:43.151Z'}]|
-
+```
+curl 'http://localhost:8080/sales/sms/messages?from=917417361068&to=917417361066'
+```
 
 ## GET /sales/sms/numbers
 |DESCRIPTION      | Get all numbers which have been messaged on                  |
@@ -119,6 +129,9 @@ curl 'http://localhost:8080/sales/sms/triggers?from=1475318536975&to=14776513369
 |RESPONSE STATUS  | 200|
 |RESPONSE BODY    | [{\_id:917417361066}]|
 
+```
+curl 'http://localhost:8080/sales/sms/numbers'
+```
 
 ## POST /sales/sms/passthrough
 |DESCRIPTION      | Send a custom reply to user via plivo                 |
@@ -127,3 +140,7 @@ curl 'http://localhost:8080/sales/sms/triggers?from=1475318536975&to=14776513369
 |BODY             | none |
 |RESPONSE STATUS  | 200|
 |RESPONSE BODY    | "Message Sent"|
+
+```
+curl 'http://localhost:8080/sales/sms/passthrough?From=917417361068&To=917417361066&Text=good'
+```
