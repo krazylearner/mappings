@@ -9,7 +9,9 @@
 |RESPONSE STATUS  | 200|
 |RESPONSE BODY    | none|
 
-
+```
+curl 'localhost:8080/sales/sms -d "From=917417361066&To=917417361068&Text=what is your name?'
+```
 
 ## GET /sales/sms
 |DESCRIPTION      | Get messages between *source* and  *user*                  |
@@ -18,6 +20,10 @@
 |BODY             | none|
 |RESPONSE STATUS  | 200|
 |RESPONSE BODY    | [{source:917417361066,user:917417361066,text:'name',flow:'RX',createdAt:'2016-10-21T11:58:43.151Z'}]|
+
+```
+curl 'http://localhost:8080/sales/sms?source=917417361068&user=917417361066'
+```
 
 
 ## GET /sales/rejectcall
